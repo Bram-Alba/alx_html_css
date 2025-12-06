@@ -1,0 +1,763 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* HERO SECTION */
+.hero {
+    background-image: url("image/images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0 150px;
+    color: white;
+    position: relative;
+}
+
+/* DARK OVERLAY TO IMPROVE TEXT READABILITY */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* HEADER INSIDE HERO */
+header {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* sits above overlay */
+}
+
+/* LOGO */
+header .logo img {
+    height: 30px;
+}
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: rgb(141, 46, 46);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.7;
+}
+
+/* HERO TEXT SECTION */
+.hero-text {
+    margin-top: 120px;
+    width: 60%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn {
+    background-color: #ff6565;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff8989;
+}
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    justify-content: space-between; /* spreads items evenly */
+    width: 210px; /* set a fixed width for spacing control */
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* HERO MAIN TEXT (Get Schooled + Stats + Button) */
+.hero-content {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.hero-content .btn {
+    background-color: #C271FF;
+    padding: 15px 40px;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hero-content .btn:hover {
+    opacity: 0.85;
+}
+
+
+/* HERO TEXT */
+.hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 120px; /* pushes text down into correct position */
+}
+
+/* Big heading */
+.hero-text h1 {
+    font-size: 72px;
+    font-weight: 800;
+    margin: 0;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* SMILES • GRIN • LAUGH */
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.hero-tags span {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero-tags .dot {
+    font-size: 18px;
+    opacity: 0.7;
+    margin: 0 5px;
+}
+
+/* HERO TAGS: SMILES • GRIN • LAUGH */
+.hero-text .hero-tags {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    text-align: center; /* center container */
+}
+
+/* reset the UL and make it a horizontal flex row */
+.hero-text .hero-tags nav ul {
+    display: inline-flex;        /* inline so width fits content and centers */
+    align-items: center;
+    gap: 0;                      /* we handle spacing with ::before dots */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* style each link */
+.hero-text .hero-tags nav ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 8px;              /* small clickable area */
+}
+
+/* insert the dot separator before every item except the first */
+.hero-text .hero-tags nav ul li + li::before {
+    content: "•";
+    color: rgba(255,255,255,0.75); /* semi-transparent white */
+    font-size: 18px;
+    margin-right: 10px;           /* space between dot and item */
+    margin-left: 10px;            /* space between previous item and dot */
+    vertical-align: middle;
+}
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+    .hero-text .hero-tags nav ul li a {
+        font-size: 13px;
+        padding: 0 6px;
+    }
+    .hero-text .hero-tags nav ul li + li::before {
+        font-size: 16px;
+        margin: 0 6px;
+    }
+}
+
+
+/* The purple button */
+.btn {
+    background-color: #c271ff;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   3. HEADER NAVIGATION
+========================= */
+
+.top-nav {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.top-nav img {
+    width: 150px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+
+
+/* =========================
+   4. HERO TEXT
+========================= */
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: 650;
+    margin-bottom: 20px;
+}
+
+.hero-tags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.hero-tags span {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Hero button */
+.btn {
+    background-color: #ed4747;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #cf5a5a;
+}
+
+
+
+/* =========================
+   PROS SECTION
+========================= */
+.hero .pros {
+    margin-top: 60px;  /* space from hero text */
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+}
+
+.hero .pros h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 32px;
+      color: #ffffff; /* default white for text */
+}
+
+.hero .pros h2 .highlight {
+    color: #7c3aed; /* purple primary color */
+}
+
+.hero .pro-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero .pro-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 180px;
+}
+
+.hero .pro-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.hero .pro-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.hero .pro-item p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero .pro-list {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+/* =========================
+   6. RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .top-nav {
+        padding: 20px 30px;
+    }
+
+    .pro-item img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+.testimonial {
+    background-color: #c271ff; /* Light purple background */
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; 
+    text-align: left; /* text stays left aligned */
+}
+
+.testimonial-img img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-right: 15px;
+}
+
+.testimonial-text {
+    max-width: 500px;
+}
+
+.testimonial-text blockquote {
+    font-style: italic;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.testimonial-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.testimonial-text p {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* =========================
+   VIDEOS / TUTORIALS SECTION
+========================= */
+
+.tutorials {
+    padding: 80px 40px;
+    background-color: #ffffff; /* or Figma background */
+}
+
+.tutorials h2 {
+    text-align: center;
+    font-size: 36px; /* adjust to Figma */
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tutorial-card {
+    background-color: #f9f5ff; /* card background from Figma */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+}
+
+.tutorial-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Play button overlay on tutorial images */
+.image-wrapper {
+    position: relative; /* needed for overlay positioning */
+    width: 100%;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Play overlay circle */
+.image-wrapper .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Play icon inside the circle */
+.image-wrapper .play-overlay .play-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.tutorial-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 16px;
+    color: var(--text-color);
+}
+
+.tutorial-card p {
+    font-size: 14px;
+    margin: 0 16px 16px 16px;
+    color: var(--secondary-text);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px 16px 16px;
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.rating img {
+    width: 80px;
+    margin: 0 16px 16px 16px;
+}
+
+.tutorial-card p:last-of-type {
+    font-size: 12px;
+    color: #777777;
+    margin: 0 16px 16px 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   MEMBERSHIP / FEATURES
+========================= */
+.membership {
+    padding: 80px 40px;
+    background-color: #071629;
+    text-align: center;
+}
+
+.membership h2 {
+    font-size: 32px; 
+    margin-bottom: 50px;
+    font-weight: 700; /* optional: bold to match Figma */
+}
+
+.membership h2 .highlight {
+    color:#C271FF /* purple */
+}
+
+.membership h2 .normal {
+    color: #ffffff; /* white */
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.membership-grid div {
+    background-color: #071629; /* card background */
+    border-radius: 12px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.membership-grid div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.membership-grid div img {
+    width: 60px; /* icon size */
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.membership-grid div h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff
+}
+
+.membership-grid div p {
+    font-size: 14px;
+    color:#fff
+}
+
+/* Button already styled globally with .btn class */
+/* =========================
+   FAQ SECTION
+========================= */
+.faq {
+    padding: 80px 40px;
+    background-color: #ffffff; /* match Figma */
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 36px; /* Figma heading size */
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.faq-columns {
+    display: flex;
+    gap: 40px; /* space between columns */
+    flex-wrap: wrap;
+}
+
+.faq-column {
+    flex: 1;
+    min-width: 250px; /* ensures columns stack on small screens */
+}
+
+.faq-column h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* accent color from Figma */
+}
+
+.faq-column p {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #222222; /* dark background from Figma */
+    color: #ffffff;
+    padding: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-top img {
+    width: 120px; /* logo size */
+}
+
+.socials i {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.socials i:hover {
+    color: var(--primary-color); /* purple on hover */
+}
+
+footer p {
+    font-size: 14px;
+    color: #cccccc;
+    margin-top: 20px;
+}
